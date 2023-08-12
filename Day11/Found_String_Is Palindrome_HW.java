@@ -23,14 +23,12 @@ public class Solution {
             s++;
             e--;
         }
-        boolean flag=false;
+        boolean flag=true;
         for(int i=0;i<n;i++){
-            if(ch[i]==ch1[i]){
-                flag=true;
-            }
-            else{
-                flag=false;
-            }
+             if (Character.toLowerCase(ch[i]) != Character.toLowerCase(ch1[i])) {
+                flag = false;
+                break;
+        }
         }
         if(flag){
             System.out.println("true");
