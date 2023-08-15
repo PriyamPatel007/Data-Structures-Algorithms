@@ -15,6 +15,9 @@ public class Solution {
             arr[i]=sc.nextInt();
         }
         int k=sc.nextInt();
+        if(k>n){
+            k%=n;
+        }
         Reverse(arr,0,n-1);
         Reverse(arr,0,k-1);
         Reverse(arr,k,n-1);
