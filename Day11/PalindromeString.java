@@ -1,0 +1,38 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        String st=sc.nextLine();
+        char ch[]=st.toCharArray();
+        char ch1[]=st.toCharArray();
+        boolean flag=true;;
+        int s=0;
+        int n=st.length();
+        int e=n-1;
+        while(s<e){
+            char temp=ch[s];
+            ch[s]=ch[e];
+            ch[e]=temp;
+            s++;
+            e--;
+        }
+        for(int i=0;i<n;i++){
+            if(Character.toLowerCase(ch[i])!=Character.toLowerCase(ch1[i])){
+                flag=false;
+            }
+        }
+        if(flag==true){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+    }
+}
