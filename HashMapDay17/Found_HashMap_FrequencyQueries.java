@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int arr[]=new int[n];
+        int queries[]=new int[m];
+        for(int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        for(int j=0;j<m;j++){
+            queries[j]=sc.nextInt();
+        }
+        HashMap<Integer,Integer> hm=new HashMap<>();
+        for(int i=0;i<n;i++){
+            if(hm.containsKey(arr[i])==true){
+                int temp=hm.get(arr[i]);
+                hm.put(arr[i],temp+1);
+            }
+            else{
+                hm.put(arr[i],1);
+            }
+        }
+        for(int i=0;i<m;i++){
+            int val=queries[i];
+            if(hm.containsKey(val)==true){
+                System.out.println(hm.get(val));
+            }
+            else{
+                System.out.println(0);
+            }
+        }
+    }
+}
