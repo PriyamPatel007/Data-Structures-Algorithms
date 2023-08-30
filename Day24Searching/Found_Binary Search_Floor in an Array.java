@@ -18,22 +18,24 @@ public class Solution {
         System.out.println(Check(arr,k));
     }
     public static int Check(int arr[],int k){
-        int lo=0;
-        int hi=arr.length-1;
-        int ans=Integer.MIN_VALUE;
-        while(lo<=hi){
-            int mid=(lo+hi)/2;
-            if(arr[mid]==k){
-                return ans;
-            }
-            else if(arr[mid]<k){
-                ans=arr[mid];
-                lo=mid+1;
-            }
-            else{
-                hi=mid-1;
+        int lo = 0;
+        int hi = arr.length - 1;
+        int ans = Integer.MIN_VALUE;
+        
+        while(lo <= hi){
+            int m = (lo+hi)/2;
+            
+            if(arr[m] == k){
+                return k;
+            }else if(arr[m] < k){
+                ans = arr[m];
+                lo = m + 1;
+            }else{
+                hi = m-1;
             }
         }
+        
         return ans;
+
     }
 }
