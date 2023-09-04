@@ -4,6 +4,7 @@ class Solution {
         if(n==1){
             return 0;
         }
+        
         if(nums[0]>nums[1]){
             return 0;
         }
